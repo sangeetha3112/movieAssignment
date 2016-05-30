@@ -18,17 +18,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 router.post('/', function(req, res){
 console.log("Inside Add Method");
 var content=JSON.parse(fs.readFileSync('json/movies.json'));
-console.log("req.body.Poster1.path="+req.body.Poster1.path);
-fs.readFile(req.files.Poster1.path, function (err, data) {
-  // ...
-  var newPath = __dirname + "/images";
-  console.log("newPath="+newPath);
-  fs.writeFile(newPath, data, function (err) {
-    console.log(err);
 
-  });
-  console.log("data="+data.toString());
-});
 var obj = {};
     obj.Title=req.body.Title;
     obj.Poster=req.body.Poster;
